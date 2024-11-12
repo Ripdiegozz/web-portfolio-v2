@@ -1,0 +1,106 @@
+---
+import tresPiLogo from "../../assets/brand_logos/trespi.svg";
+import superGirosLogo from "../../assets/brand_logos/supergiros.png";
+import stanleyLogo from "../../assets/brand_logos/stanley.svg";
+import logoFundaleon from "../../assets/brand_logos/logo_fundaleon.png";
+---
+
+<div class='py-8'>
+  <h3 class='text-center px-4'>Companies and organizations I've worked with</h3>
+  <div class='wrapper'>
+    <div class='item item1'>
+      <img
+        src={tresPiLogo.src}
+        alt='TresPi'
+        class='w-full h-full object-contain'
+      />
+    </div>
+    <div class='item item2'>
+      <img
+        src={superGirosLogo.src}
+        alt='SuperGiros'
+        class='w-full h-full object-contain'
+      />
+    </div>
+    <div class='item item3'>
+      <img
+        src={stanleyLogo.src}
+        alt='Stanley'
+        class='w-full h-full object-contain'
+      />
+    </div>
+    <div class='item item4'>
+      <img
+        src={logoFundaleon.src}
+        alt='Fundaleon'
+        class='w-full h-full object-contain'
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  .wrapper {
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+
+  @keyframes scrollLeft {
+    to {
+      left: -200px;
+    }
+  }
+
+  .item {
+    width: 200px;
+    height: 100px;
+    border-radius: 6px;
+    position: absolute;
+    left: max(calc(200px * 4), 100%);
+    animation-name: scrollLeft;
+    animation-duration: 18s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .item1 {
+    filter: grayscale(100%);
+    animation-delay: calc(18s / 4 * (4 - 1) * -1);
+  }
+
+  .item2 {
+    filter: grayscale(100%);
+    animation-delay: calc(18s / 4 * (4 - 2) * -1);
+  }
+
+  .item3 {
+    filter: grayscale(100%);
+    animation-delay: calc(18s / 4 * (4 - 3) * -1);
+  }
+
+  .item4 {
+    filter: grayscale(100%);
+    animation-delay: calc(18s / 4 * (4 - 4) * -1);
+  }
+</style>

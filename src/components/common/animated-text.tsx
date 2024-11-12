@@ -66,10 +66,10 @@ export const AnimatedText = ({
 
   return (
     <Wrapper className={className}>
-      <span className="sr-only">{textArray.join(" ")}</span>
+      <span className='sr-only'>{textArray.join(" ")}</span>
       <motion.span
         ref={ref}
-        initial="hidden"
+        initial='hidden'
         animate={controls}
         variants={{
           visible: { transition: { staggerChildren: 0.1 } },
@@ -78,10 +78,10 @@ export const AnimatedText = ({
         aria-hidden
       >
         {textArray.map((line, lineIndex) => (
-          <span className="block" key={`${line}-${lineIndex}`}>
+          <span className='block' key={`${line}-${lineIndex}`}>
             {line.split(" ").map((word, wordIndex) => (
               <motion.span
-                className="inline-block"
+                className='inline-block'
                 key={`${word}-${wordIndex}`}
                 variants={{
                   hidden: { opacity: 0, x: 10, filter: "blur(4px)" },
@@ -96,13 +96,13 @@ export const AnimatedText = ({
                 {word.split("").map((char, charIndex) => (
                   <motion.span
                     key={`${char}-${charIndex}`}
-                    className="inline-block"
+                    className='inline-block'
                     variants={animation}
                   >
                     {char}
                   </motion.span>
                 ))}
-                <span className="inline-block">&nbsp;</span>
+                <span className='inline-block'>&nbsp;</span>
               </motion.span>
             ))}
           </span>

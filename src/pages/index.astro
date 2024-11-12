@@ -2,11 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Summary from "../components/home/Summary.astro";
+import BrandsCarousel from "../components/home/BrandsCarousel.astro";
+import Experience from "../components/home/Experience.astro";
 ---
 
 <Layout title='Welcome to Dagadev'>
   <Header />
-  <main class='max-w-[700px] mx-auto'>
+  <main class='w-full md:max-w-[700px] mx-auto'>
     <Summary />
+    <BrandsCarousel />
+    <Experience />
   </main>
 </Layout>
