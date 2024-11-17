@@ -1,99 +1,5 @@
 ---
-const techStackImages = [
-  {
-    name: "TypeScript",
-    key: "typescript",
-  },
-  {
-    name: "HTML",
-    key: "html",
-  },
-  {
-    name: "CSS",
-    key: "css",
-  },
-  {
-    name: "JavaScript",
-    key: "js",
-  },
-  {
-    name: "Node.js",
-    key: "nodejs",
-  },
-  {
-    name: "Java",
-    key: "java",
-  },
-  {
-    name: "Spring Boot",
-    key: "spring",
-  },
-  {
-    name: "Hibernate",
-    key: "hibernate",
-  },
-  {
-    name: "MongoDB",
-    key: "mongodb",
-  },
-  {
-    name: "Docker",
-    key: "docker",
-  },
-  {
-    name: "Angular",
-    key: "angular",
-  },
-  {
-    name: "Express.js",
-    key: "express",
-  },
-  {
-    name: "TailwindCSS",
-    key: "tailwindcss",
-  },
-  {
-    name: "React.js",
-    key: "react",
-  },
-  {
-    name: "Next.js",
-    key: "nextjs",
-  },
-  {
-    name: "MySQL",
-    key: "mysql",
-  },
-  {
-    name: "PostgreSQL",
-    key: "postgresql",
-  },
-
-  {
-    name: "Prisma ORM",
-    key: "prisma",
-  },
-  {
-    name: "Azure",
-    key: "azure",
-  },
-  {
-    name: "Vite",
-    key: "vite",
-  },
-  {
-    name: "git",
-    key: "git",
-  },
-  {
-    name: "GitHub",
-    key: "github",
-  },
-  {
-    name: "GitLab",
-    key: "gitlab",
-  },
-];
+import techStack from "../../constants/tech-stack";
 ---
 
 <section class='w-full py-8' id='stack'>
@@ -103,16 +9,16 @@ const techStackImages = [
     <div>
       <div class='space-y-3'>
         <h2 class='text-2xl font-bold'>
-          My development <span class='text-[#FFD700]'>stack</span>
+          My Development <span class='text-[#FFD700]'>Stack</span>
         </h2>
         <p
           class='mx-auto font-semibold max-w-[700px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'
         >
         </p>
       </div>
-      <div class='flex flex-wrap justify-center gap-6 w-full mx-auto md:p-6'>
+      <div class='flex flex-wrap justify-center gap-6 w-full mx-auto md:py-6'>
         {
-          techStackImages.map((tech) => (
+          techStack.map((tech) => (
             <div
               class='p-0 transition-transform hover:scale-105 tooltip'
               data-tip={tech.name}
