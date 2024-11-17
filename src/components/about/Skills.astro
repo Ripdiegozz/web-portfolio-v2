@@ -1,0 +1,131 @@
+---
+const techStackImages = [
+  {
+    name: "TypeScript",
+    key: "typescript",
+  },
+  {
+    name: "HTML",
+    key: "html",
+  },
+  {
+    name: "CSS",
+    key: "css",
+  },
+  {
+    name: "JavaScript",
+    key: "js",
+  },
+  {
+    name: "Node.js",
+    key: "nodejs",
+  },
+  {
+    name: "Java",
+    key: "java",
+  },
+  {
+    name: "Spring Boot",
+    key: "spring",
+  },
+  {
+    name: "Hibernate",
+    key: "hibernate",
+  },
+  {
+    name: "MongoDB",
+    key: "mongodb",
+  },
+  {
+    name: "Docker",
+    key: "docker",
+  },
+  {
+    name: "Angular",
+    key: "angular",
+  },
+  {
+    name: "Express.js",
+    key: "express",
+  },
+  {
+    name: "TailwindCSS",
+    key: "tailwindcss",
+  },
+  {
+    name: "React.js",
+    key: "react",
+  },
+  {
+    name: "Next.js",
+    key: "nextjs",
+  },
+  {
+    name: "MySQL",
+    key: "mysql",
+  },
+  {
+    name: "PostgreSQL",
+    key: "postgresql",
+  },
+
+  {
+    name: "Prisma ORM",
+    key: "prisma",
+  },
+  {
+    name: "Azure",
+    key: "azure",
+  },
+  {
+    name: "Vite",
+    key: "vite",
+  },
+  {
+    name: "git",
+    key: "git",
+  },
+  {
+    name: "GitHub",
+    key: "github",
+  },
+  {
+    name: "GitLab",
+    key: "gitlab",
+  },
+];
+---
+
+<section class='w-full py-8' id='stack'>
+  <div
+    class='container max-w-5xl mx-auto items-center justify-center text-center md:px-6 lg:grid-cols-2 xl:max-w-6xl'
+  >
+    <div>
+      <div class='space-y-3'>
+        <h2 class='text-2xl font-bold'>
+          My development <span class='text-[#FFD700]'>stack</span>
+        </h2>
+        <p
+          class='mx-auto font-semibold max-w-[700px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'
+        >
+        </p>
+      </div>
+      <div class='flex flex-wrap justify-center gap-6 w-full mx-auto md:p-6'>
+        {
+          techStackImages.map((tech) => (
+            <div
+              class='p-0 transition-transform hover:scale-105 tooltip'
+              data-tip={tech.name}
+            >
+              <img
+                src={`https://skillicons.dev/icons?i=${tech.key}`}
+                alt={tech.name}
+                class='h-10 w-10 md:h-12 md:w-12'
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

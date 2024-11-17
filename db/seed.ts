@@ -188,7 +188,7 @@ export default async function () {
       startDate: new Date("2021-01-01"),
       endDate: new Date("2021-12-31"),
       shortDescription:
-        "As a full-stack developer, I led the development of web applications to digitally transform the library's inventory system and streamline the management of library services",
+        "As a full-stack developer, I led the development of web applications to digitally transform the library's inventory system and streamline the management of library services for the organization. I also worked on the integration of the library's inventory system with the website. I used various technologies such as Python, FastAPI, React, PostgreSQL, TypeScript, Docker, Git, and GitHub.",
       description:
         "I worked as a full-stack developer at Fundaleon, a non-profit organization that provides financial support to entrepreneurs and small businesses in Colombia.",
       highlights: [
@@ -200,6 +200,10 @@ export default async function () {
           title:
             "Implemented a RESTful API to integrate the library's inventory system with the website, enabling real-time updates and notifications",
         },
+        {
+          title:
+            "Implemented a RESTful API to integrate the application with the organization's database, enabling real-time updates and notifications",
+        }
       ],
       image: "/logo_fundaleon.png",
       technologies: [
