@@ -2,9 +2,86 @@
 
 ---
 
-<template>
-  <div class='contact'>
-    <h1>Contact</h1>
-    <p>Get in touch with us</p>
+<div class='mx-auto w-full py-6 px-8'>
+  <h2 class='text-2xl font-bold text-center'>
+    Contact <span class='text-[#FFD700]'>Me</span> 📧
+  </h2>
+
+  <div class='w-full flex items-center justify-center'>
+    <div class='w-full flex items-center justify-center'>
+      <ul
+        class='flex w-full justify-around items-center md:justify-center gap-6 mt-2 md:gap-10 reveal'
+      >
+        <li class='hover:scale-110 transition-transform hover:text-[#FFD700]'>
+          <div
+            class='p-0 transition-transform hover:scale-105 tooltip'
+            data-tip='My Github Profile'
+          >
+            <a
+              href='https://github.com/Ripdiegozz'
+              target='_blank'
+              class='text-5xl'
+              aria-label='My Github Profile'
+            >
+              <i class='fa-brands fa-github'></i>
+            </a>
+          </div>
+        </li>
+        <li class='hover:scale-110 transition-transform hover:text-[#FFD700]'>
+          <div
+            class='p-0 transition-transform hover:scale-105 tooltip'
+            data-tip='My Linkedin'
+          >
+            <a
+              href='https://www.linkedin.com/in/dagadev/'
+              target='_blank'
+              class='text-5xl'
+              aria-label='My Linkedin'
+            >
+              <i class='fa-brands fa-linkedin'></i>
+            </a>
+          </div>
+        </li>
+        <li
+          class='hover:scale-110 transition-transform hover:text-[#FFD700]'
+          aria-label='Mail me :)'
+        >
+          <div
+            class='p-0 transition-transform hover:scale-105 tooltip'
+            data-tip='Mail me :)'
+          >
+            <p class='text-5xl cursor-pointer' id='mailButton'>
+              <i class='fa-solid fa-square-envelope'></i>
+            </p>
+          </div>
+        </li>
+        <li class='hover:scale-110 transition-transform hover:text-[#FFD700]'>
+          <div
+            class='p-0 transition-transform hover:scale-105 tooltip'
+            data-tip='My Twitter'
+          >
+            <a
+              href='https://x.com/rip_diegozz'
+              target='_blank'
+              class='text-5xl'
+              aria-label='My Twitter'
+            >
+              <i class='fa-brands fa-x-twitter'></i>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
-</template>
+</div>
+
+<script>
+  const emailAdress = "diegogarciag63@gmail.com";
+
+  function copyEmail() {
+    navigator.clipboard.writeText(emailAdress);
+    alert("Email copied to clipboard!");
+  }
+
+  document.getElementById("mailButton")?.addEventListener("click", copyEmail);
+</script>
