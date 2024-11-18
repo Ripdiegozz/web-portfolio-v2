@@ -2,7 +2,7 @@
 import techStack from "../../constants/tech-stack";
 ---
 
-<section class='w-full py-8' id='stack'>
+<section class='w-full py-8 skills'>
   <div
     class='container max-w-5xl mx-auto items-center justify-center text-center md:px-6 lg:grid-cols-2 xl:max-w-6xl'
   >
@@ -35,3 +35,10 @@ import techStack from "../../constants/tech-stack";
     </div>
   </div>
 </section>
+
+<script>
+  // @ts-expect-error - ScrollReveal is defined in the global scope
+  ScrollReveal().reveal(".skills", {
+    delay: 150,
+  });
+</script>

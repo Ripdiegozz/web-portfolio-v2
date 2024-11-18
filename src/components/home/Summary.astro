@@ -115,3 +115,14 @@ const animation = {
     </ul>
   </div>
 </section>
+
+<script>
+  const emailAdress = "diegogarciag63@gmail.com";
+
+  function copyEmail() {
+    navigator.clipboard.writeText(emailAdress);
+    alert("Email copied to clipboard!");
+  }
+
+  document.getElementById("mailButton")?.addEventListener("click", copyEmail);
+</script>
