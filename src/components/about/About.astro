@@ -1,5 +1,6 @@
 ---
 import Skills from "./Skills.astro";
+import Timeline from "./Timeline.astro";
 import downloadIcon from "/public/download-icon.svg";
 import readIcon from "/public/read-icon.svg";
 import yop from "/public/yo.png";
@@ -10,7 +11,7 @@ import yop from "/public/yo.png";
     About <span class='text-[#FFD700]'>Me</span>
   </h2>
   <div
-    class='w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 md:gap-8 py-4'
+    class='w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 md:gap-8'
   >
     <p class='text-md py-4'>
       <strong>Hi!</strong>
@@ -51,5 +52,6 @@ import yop from "/public/yo.png";
       /></a
     >
   </div>
+  <Timeline />
   <Skills />
 </div>
