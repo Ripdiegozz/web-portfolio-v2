@@ -1,16 +1,18 @@
 ---
+import EmailButton from "../common/email-button";
+
 
 ---
 
 <div class='mx-auto w-full py-2 px-8'>
   <h2 class='text-2xl py-2 font-bold text-center'>
-    Contact <span class='text-[#FFD700]'>Me</span> 📧
+    Contact <span class='text-[#FFD700]'>Me</span> 
   </h2>
 
   <div class='w-full flex items-center justify-center contact'>
     <div class='w-full flex items-center justify-center'>
       <ul
-        class='flex w-full justify-around items-center md:justify-center gap-6 mt-2 md:gap-10 reveal'
+        class='flex w-full justify-center items-center md:justify-center gap-6 mt-2 md:gap-10 reveal'
       >
         <li class='hover:scale-110 transition-transform hover:text-[#FFD700]'>
           <div
@@ -20,7 +22,7 @@
             <a
               href='https://github.com/Ripdiegozz'
               target='_blank'
-              class='text-5xl'
+              class='text-4xl'
               aria-label='My Github Profile'
             >
               <i class='fa-brands fa-github'></i>
@@ -35,7 +37,7 @@
             <a
               href='https://www.linkedin.com/in/dagadev/'
               target='_blank'
-              class='text-5xl'
+              class='text-4xl'
               aria-label='My Linkedin'
             >
               <i class='fa-brands fa-linkedin'></i>
@@ -46,14 +48,7 @@
           class='hover:scale-110 transition-transform hover:text-[#FFD700]'
           aria-label='Mail me :)'
         >
-          <div
-            class='p-0 transition-transform hover:scale-105 tooltip'
-            data-tip='Mail me :)'
-          >
-            <p class='text-5xl cursor-pointer' id='mailButtonContact'>
-              <i class='fa-solid fa-square-envelope'></i>
-            </p>
-          </div>
+          <EmailButton client:load />
         </li>
         <li class='hover:scale-110 transition-transform hover:text-[#FFD700]'>
           <div
@@ -63,7 +58,7 @@
             <a
               href='https://x.com/rip_diegozz'
               target='_blank'
-              class='text-5xl'
+              class='text-4xl'
               aria-label='My Twitter'
             >
               <i class='fa-brands fa-x-twitter'></i>

@@ -1,5 +1,6 @@
 ---
 import AnimatedText from "../common/animated-text";
+import EmailButton from "../common/email-button";
 
 const title =
   "A full-stack developer focused on building user-centric software solutions for businesses.";
@@ -40,20 +41,24 @@ const animation = {
     </p>
   </div>
 
-  <div class='flex gap-4 mt-4 items-center justify-start w-full md:w-[600px]'>
+  <div
+    class='flex flex-col md:flex-row gap-4 mt-4 items-center justify-start w-full md:w-[600px]'
+  >
     <div
-      class='tooltip tooltip-bottom hover:-translate-y-0.5 transition-transform font-bold w-3/4'
+      class='tooltip tooltip-top hover:-translate-y-0.5 transition-transform font-bold w-3/4'
       data-tip='Make your ideas a reality 😉'
     >
       <a
         href='/contact'
-        class='badge badge-lg py-5 px-4 bg-black hover:bg-gray-700 text-white hover:-translate-y-0.5 transition-transform font-bold'
+        class='badge badge-lg py-6 px-4 bg-black hover:bg-gray-700 text-white hover:-translate-y-0.5 transition-transform font-bold'
       >
         Open for Work - Let's Talk
       </a>
     </div>
 
-    <ul class='flex w-full justify-around items-center md:justify-center gap-6'>
+    <ul
+      class='flex w-full justify-center items-center md:justify-center gap-4 md:gap-6'
+    >
       <li class='hover:scale-110 transition-transform hover:text-[#FFD700]'>
         <div
           class='p-0 transition-transform hover:scale-105 tooltip'
@@ -62,7 +67,7 @@ const animation = {
           <a
             href='https://github.com/Ripdiegozz'
             target='_blank'
-            class='text-3xl'
+            class='text-4xl'
             aria-label='My Github Profile'
           >
             <i class='fa-brands fa-github'></i>
@@ -77,7 +82,7 @@ const animation = {
           <a
             href='https://www.linkedin.com/in/dagadev/'
             target='_blank'
-            class='text-3xl'
+            class='text-4xl'
             aria-label='My Linkedin'
           >
             <i class='fa-brands fa-linkedin'></i>
@@ -88,14 +93,7 @@ const animation = {
         class='hover:scale-110 transition-transform hover:text-[#FFD700]'
         aria-label='Mail me :)'
       >
-        <div
-          class='p-0 transition-transform hover:scale-105 tooltip'
-          data-tip='Mail me :)'
-        >
-          <p class='text-3xl cursor-pointer' id='mailButton'>
-            <i class='fa-solid fa-square-envelope'></i>
-          </p>
-        </div>
+        <EmailButton client:load />
       </li>
       <li class='hover:scale-110 transition-transform hover:text-[#FFD700]'>
         <div
@@ -105,7 +103,7 @@ const animation = {
           <a
             href='https://x.com/rip_diegozz'
             target='_blank'
-            class='text-3xl'
+            class='text-4xl'
             aria-label='My Twitter'
           >
             <i class='fa-brands fa-x-twitter'></i>
@@ -115,14 +113,3 @@ const animation = {
     </ul>
   </div>
 </section>
-
-<script>
-  const emailAdress = "diegogarciag63@gmail.com";
-
-  function copyEmail() {
-    navigator.clipboard.writeText(emailAdress);
-    alert("Email copied to clipboard!");
-  }
-
-  document.getElementById("mailButton")?.addEventListener("click", copyEmail);
-</script>
