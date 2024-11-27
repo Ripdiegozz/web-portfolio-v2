@@ -6,10 +6,13 @@ import logoFundaleon from "../../assets/brand_logos/logo_fundaleon.png";
 ---
 
 <div class='py-8'>
-  <h3 class='text-center text-lg px-4'>Companies and organizations I've worked with</h3>
+  <h3 class='text-center text-lg px-4'>
+    Companies and organizations I've worked with
+  </h3>
   <div class='wrapper'>
     <div class='item item1'>
       <img
+        loading='eager'
         src={tresPiLogo.src}
         alt='TresPi'
         class='w-full h-full object-contain'
@@ -17,6 +20,7 @@ import logoFundaleon from "../../assets/brand_logos/logo_fundaleon.png";
     </div>
     <div class='item item2'>
       <img
+        loading='eager'
         src={superGirosLogo.src}
         alt='SuperGiros'
         class='w-full h-full object-contain'
@@ -24,6 +28,7 @@ import logoFundaleon from "../../assets/brand_logos/logo_fundaleon.png";
     </div>
     <div class='item item3'>
       <img
+        loading='eager'
         src={stanleyLogo.src}
         alt='Stanley'
         class='w-full h-full object-contain'
@@ -31,6 +36,7 @@ import logoFundaleon from "../../assets/brand_logos/logo_fundaleon.png";
     </div>
     <div class='item item4'>
       <img
+        loading='eager'
         src={logoFundaleon.src}
         alt='Fundaleon'
         class='w-full h-full object-contain'
@@ -57,7 +63,7 @@ import logoFundaleon from "../../assets/brand_logos/logo_fundaleon.png";
     position: relative;
     height: 100px;
     overflow: hidden;
-    mask-image: linear-gradient(
+    mask-img: linear-gradient(
       to right,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 1) 20%,

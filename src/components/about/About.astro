@@ -1,41 +1,55 @@
 ---
 import Skills from "./Skills.astro";
+import downloadIcon from "/public/download-icon.svg";
+import readIcon from "/public/read-icon.svg";
+import yop from "/public/yo.png";
 ---
 
-<div class='mx-auto w-full py-6 px-8'>
+<div class='w-full py-6 px-8'>
   <h2 class='text-2xl font-bold text-center'>
     About <span class='text-[#FFD700]'>Me</span>
   </h2>
-  <p class='text-md py-4'>
-    <strong>Hi!</strong>
-    <br />
-    I'm Diego, a Software Analyst and Developer with one year of experience in the
-    field. I specialize in developing web applications using popular technologies
-    like React, Node.js, PostgreSQL, TypeScript, Java, and more.
-    <br /><br />
-    I'm passionate about learning and constantly improving my skills and knowledge.
-    I thrive on tackling new challenges that help me grow both professionally and
-    personally.
-    <br /><br />
-    Thanks for visiting my website!
-  </p>
-  <div class='w-full flex items-center justify-center'>
-    <a href='/resume' class='btn btn-outline mx-auto mt-4'
-      >Download my resume
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        class='h-6 w-6 ml-2'
-        fill='none'
-        viewBox='0 0 24 24'
-        stroke='currentColor'
-      >
-        <path
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          stroke-width='2'
-          d='M9 5l7 7-7 7'></path>
-      </svg>
+  <div
+    class='w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 md:gap-8 py-4'
+  >
+    <p class='text-md py-4'>
+      <strong>Hi!</strong>
+      <br />
+      I'm Diego, a Software Analyst and Developer with one year of experience in the
+      field. I specialize in developing web applications using popular technologies
+      like React, Node.js, PostgreSQL, TypeScript, Java, and more.
+      <br /><br />
+      I'm passionate about learning and constantly improving my skills and knowledge.
+      I thrive on tackling new challenges that help me grow both professionally and
+      personally.
+      <br /><br />
+      Thanks for visiting my website!
+    </p>
+
+    <div class="avatar">
+      <div class="ring-yellow-300 ring-offset-base-100 w-36 rounded-full ring ring-offset-2">
+        <img src={yop.src} />
+      </div>
+    </div>
+  </div>
+  <div class='w-full flex flex-wrap items-center justify-center md:justify-start gap-2'>
+    <a href='/example.pdf' target='_blank' class='btn btn-outline mt-4 group'
+      >Show my CV
+      <img
+        src={readIcon.src}
+        alt='read-cv'
+        class='object-contain w-6 h-6 group-hover:filter group-hover:invert group-hover:brightness-0'
+        loading='lazy'
+      />
     </a>
+    <a href='/example.pdf' download class='btn btn-ghost mt-4'
+      >Download my CV <img
+        src={downloadIcon.src}
+        alt='download-cv'
+        class='object-contain w-6 h-6'
+        loading='lazy'
+      /></a
+    >
   </div>
   <Skills />
 </div>
