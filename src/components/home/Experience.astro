@@ -20,7 +20,7 @@ const jobsFromDb = await db
     {
       jobsFromDb.map((job) => (
         <div class='card experience'>
-          <div class='card-body py-6'>
+          <div class='card-body py-3'>
             <div class='flex flex-col md:flex-row items-center justify-between my-2'>
               <h3 class='text-[24px] font-[600]'>{job.company}</h3>
               {job.company.includes("Tres Pi Medios") && (
