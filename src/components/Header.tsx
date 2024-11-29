@@ -25,6 +25,8 @@ function Header() {
       }}
       transition={{ duration: 0.2 }}
       className='sticky top-0 left-0 w-full z-50'
+      onMouseEnter={() => setIsHidden(false)}
+      onMouseLeave={() => setIsHidden(true)}
     >
       <div className='navbar md:w-3/4 md:mx-auto bg-base-100 border-b border-gray-100 rounded-md shadow-sm px-4'>
         <div className='navbar-start'>
@@ -51,7 +53,7 @@ function Header() {
             >
               <li>
                 <a
-                  href='/'
+                  href='/#'
                   className='text-black no-underline text-[14px] font-[600]'
                 >
                   Home
@@ -59,7 +61,7 @@ function Header() {
               </li>
               <li>
                 <a
-                  href='#about'
+                  href='/#about'
                   className='text-black no-underline text-[14px] font-[600]'
                 >
                   About
@@ -67,7 +69,7 @@ function Header() {
               </li>
               <li>
                 <a
-                  href='#experience'
+                  href='/#experience'
                   className='text-black no-underline text-[14px] font-[600]'
                 >
                   Experience
@@ -75,7 +77,7 @@ function Header() {
               </li>
               <li>
                 <a
-                  href='#projects'
+                  href='/#projects'
                   className='text-black no-underline text-[14px] font-[600]'
                 >
                   Projects
@@ -91,7 +93,7 @@ function Header() {
               </li>
             </ul>
           </div>
-          <a href='/'>
+          <a href='/#'>
             <img
               src={logo.src}
               alt='dagadev-logo'
@@ -103,7 +105,7 @@ function Header() {
           <ul className='menu menu-horizontal px-1'>
             <li>
               <a
-                href='/'
+                href='/#'
                 className='text-black no-underline text-[14px] font-[600]'
               >
                 Home
@@ -111,7 +113,7 @@ function Header() {
             </li>
             <li>
               <a
-                href='#about'
+                href='/#about'
                 className='text-black no-underline text-[14px] font-[600]'
               >
                 About
@@ -119,7 +121,7 @@ function Header() {
             </li>
             <li>
               <a
-                href='#experience'
+                href='/#experience'
                 className='text-black no-underline text-[14px] font-[600]'
               >
                 Experience
@@ -127,7 +129,7 @@ function Header() {
             </li>
             <li>
               <a
-                href='#projects'
+                href='/#projects'
                 className='text-black no-underline text-[14px] font-[600]'
               >
                 Projects
