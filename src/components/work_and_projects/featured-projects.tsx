@@ -85,7 +85,7 @@ function FeaturedProjects() {
                 alt={project.title}
                 className='w-full h-48 sm:h-64 md:h-96 object-contain md:object-cover rounded-md'
               />
-              <p>{project.description}</p>
+              <p className="pt-6">{project.description}</p>
               <div className='flex flex-wrap justify-center md:justify-start gap-4 my-6'>
                 <a
                   href={project.live}
