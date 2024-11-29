@@ -73,7 +73,7 @@ function FeaturedProjects() {
         {Object.keys(projects.data).map((key) => {
           const project = projects.data[key];
           return (
-            <div key={key} className='card bg-white shadow-sm p-4'>
+            <div key={project.repository} className='card bg-white shadow-sm p-4'>
               <h3
                 className='text-2xl font-semibold mt-4 mb-2'
                 id={project.title.toLowerCase().replace(" ", "-")}
