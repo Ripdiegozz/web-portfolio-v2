@@ -51,7 +51,7 @@ function Header() {
             >
               <li>
                 <a
-                  href='#'
+                  href='/'
                   className='text-black no-underline text-[14px] font-[600]'
                 >
                   Home
@@ -103,7 +103,7 @@ function Header() {
           <ul className='menu menu-horizontal px-1'>
             <li>
               <a
-                href='#'
+                href='/'
                 className='text-black no-underline text-[14px] font-[600]'
               >
                 Home
