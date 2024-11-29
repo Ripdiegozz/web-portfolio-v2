@@ -189,8 +189,8 @@ export default async function () {
       id: 3,
       title: "Full-stack Developer",
       company: "Fundación Literaria León Bienvenido Weffer",
-      startDate: new Date("2021-01-01"),
-      endDate: new Date("2021-12-31"),
+      startDate: new Date("2023-12-01"),
+      endDate: new Date("2024-01-28"),
       shortDescription:
         "As a full-stack developer, I led the development of web applications to digitally transform the library's inventory system and streamline the management of library services for the organization. I also worked on the integration of the library's inventory system with the website. I used various technologies such as Python, FastAPI, React, PostgreSQL, TypeScript, Docker, Git, and GitHub.",
       description:
