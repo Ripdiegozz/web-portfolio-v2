@@ -1,6 +1,7 @@
 # Diego's Portfolio
 
-Welcome to my personal portfolio! This project showcases my skills and projects, built with [Astro](https://astro.build/), [React](https://reactjs.org/), and [Tailwind CSS](https://tailwindcss.com/).
+## Welcome to my personal portfolio! This project showcases my skills and projects, built with [Astro](https://astro.build/), [React](https://reactjs.org/), and [Tailwind CSS](https://tailwindcss.com/).
+![image](https://github.com/user-attachments/assets/7cfd140b-131d-45b5-a129-8852d9a26f8a)
 
 ## 🚀 Quick Start
 
