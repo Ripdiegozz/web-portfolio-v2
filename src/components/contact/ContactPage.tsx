@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { sendEmail } from "../services/email";
+import { sendEmail } from "../../services/email";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
