@@ -1,0 +1,7 @@
+const config = {
+    ASTRO_EMAIL_JS_PUBLIC_KEY: import.meta.env.PUBLIC_ASTRO_EMAIL_JS_PUBLIC_KEY,
+    ASTRO_EMAIL_JS_TEMPLATE_ID: import.meta.env.PUBLIC_ASTRO_EMAIL_JS_TEMPLATE_ID,
+    ASTRO_EMAIL_JS_SERVICE_ID: import.meta.env.PUBLIC_ASTRO_EMAIL_JS_SERVICE_ID,
+}
+
+export default config;
