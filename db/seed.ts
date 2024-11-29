@@ -56,6 +56,10 @@ export default async function () {
           icon: "postgresql",
         },
         {
+          name: "Sequelize",
+          icon: "sequelize",
+        },
+        {
           name: "TypeScript",
           icon: "typescript",
         },
@@ -190,7 +194,7 @@ export default async function () {
       shortDescription:
         "As a full-stack developer, I led the development of web applications to digitally transform the library's inventory system and streamline the management of library services for the organization. I also worked on the integration of the library's inventory system with the website. I used various technologies such as Python, FastAPI, React, PostgreSQL, TypeScript, Docker, Git, and GitHub.",
       description:
-        "I worked as a full-stack developer at Fundaleon, a non-profit organization that provides financial support to entrepreneurs and small businesses in Colombia.",
+        "I worked as a full-stack developer at Fundación Literaria León Bienvenido Weffer, a non-profit organization that promotes reading and literacy in Venezuela. Here, I led the development of web applications to digitally transform the library's inventory system and streamline the management of library services for the organization. I also worked on the integration of the library's inventory system with the website. As part of the development team, I was responsible for the design, development, and implementation of new features and functionalities. I also worked on the optimization and performance improvement of existing applications and services. I used various technologies such as Python, FastAPI, React, PostgreSQL, TypeScript, Docker, Git, and GitHub.",
       highlights: [
         {
           title:
