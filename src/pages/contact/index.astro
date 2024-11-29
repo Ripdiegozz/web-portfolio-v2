@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.tsx";
+import ContactPage from "../../components/contact/ContactPage.tsx";
+---
+
+<Layout title='Diego Garcia - Full Stack Developer'>
+  <Header client:load />
+  <main class='w-full md:max-w-[900px] mx-auto min-h-[80vh]'>
+    <ContactPage client:load />
+  </main>
+  <footer class='w-full text-center py-4'>
+    <h3 class='text-sm font-bold'>Made with 💗 in Astro by Diego Garcia</h3>
+  </footer>
+</Layout>
