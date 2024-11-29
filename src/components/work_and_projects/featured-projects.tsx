@@ -70,10 +70,10 @@ function FeaturedProjects() {
         Featured <span className='text-[#FFD700]'>Projects</span>
       </h2>
       <div>
-        {Object.keys(projects.data).map((key) => {
+        {Object.keys(projects.data).map((key, index) => {
           const project = projects.data[key];
           return (
-            <div key={project.repository} className='card bg-white shadow-sm p-4'>
+            <div key={project.repository + index} className='card bg-white shadow-sm p-4'>
               <h3
                 className='text-2xl font-semibold mt-4 mb-2'
                 id={project.title.toLowerCase().replace(" ", "-")}
