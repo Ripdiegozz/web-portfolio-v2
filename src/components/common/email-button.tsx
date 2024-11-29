@@ -52,6 +52,7 @@ function EmailButton() {
             <i className='fa-solid fa-square-envelope'></i>
           </p>
         </div>
+        <p className='sr-only'>Mail me :)</p>
       </button>
 
       <dialog id='mail_modal' className='modal text-black'>
