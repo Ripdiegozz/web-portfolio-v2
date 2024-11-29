@@ -65,7 +65,7 @@ const projects: {
 
 function FeaturedProjects() {
   return (
-    <div className='px-8 py-6'>
+    <div className='px-8 py-6' id="projects">
       <h2 className='text-2xl font-bold text-center'>
         Featured <span className='text-[#FFD700]'>Projects</span>
       </h2>

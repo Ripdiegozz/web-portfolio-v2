@@ -75,7 +75,7 @@ function Header() {
               </li>
               <li>
                 <a
-                  href='/projects'
+                  href='#projects'
                   className='text-black no-underline text-[14px] font-[600]'
                 >
                   Projects
@@ -127,7 +127,7 @@ function Header() {
             </li>
             <li>
               <a
-                href='/projects'
+                href='#projects'
                 className='text-black no-underline text-[14px] font-[600]'
               >
                 Projects
