@@ -16,6 +16,14 @@ function Header() {
     }
   });
 
+  const validateHideNavbar = () => {
+    if (window.scrollY > 50) {
+      setIsHidden(true);
+    }
+
+    return;
+  }
+
   return (
     <motion.div
       animate={isHidden ? "hidden" : "visible"}
@@ -26,7 +34,7 @@ function Header() {
       transition={{ duration: 0.2 }}
       className='sticky top-0 left-0 w-full z-50'
       onMouseEnter={() => setIsHidden(false)}
-      onMouseLeave={() => setIsHidden(true)}
+      onMouseLeave={() => validateHideNavbar()}
     >
       <div className='navbar md:w-3/4 md:mx-auto bg-base-100 border-b border-gray-100 rounded-md shadow-sm px-4'>
         <div className='navbar-start'>
