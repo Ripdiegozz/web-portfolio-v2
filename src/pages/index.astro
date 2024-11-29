@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import Header from "../components/Header.tsx";
 import Summary from "../components/home/Summary.astro";
 import BrandsCarousel from "../components/home/BrandsCarousel.astro";
 import Experience from "../components/home/Experience.astro";
@@ -10,7 +10,7 @@ import FeaturedProjects from "../components/work_and_projects/featured-projects"
 ---
 
 <Layout title='Diego Garcia - Full Stack Developer'>
-  <Header />
+  <Header client:load />
   <main class='w-full md:max-w-[700px] mx-auto'>
     <Summary />
     <BrandsCarousel />
