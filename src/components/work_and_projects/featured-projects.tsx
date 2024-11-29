@@ -67,7 +67,7 @@ function FeaturedProjects() {
   return (
     <div className='px-8 py-6' id="projects">
       <h2 className='text-2xl font-bold text-center'>
-        Featured <span className='text-[#FFD700]'>Projects</span>
+        Featured <span className='text-[#FFC107]'>Projects</span>
       </h2>
       <div>
         {Object.keys(projects.data).map((key, index) => {
