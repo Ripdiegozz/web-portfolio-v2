@@ -68,6 +68,10 @@ export default async function () {
           icon: "azure",
         },
         {
+          name: "AWS",
+          icon: "aws",
+        },
+        {
           name: "Docker",
           icon: "docker",
         },
