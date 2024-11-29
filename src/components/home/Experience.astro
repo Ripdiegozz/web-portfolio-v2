@@ -1,6 +1,6 @@
 ---
 import { db, desc, JobExperience } from "astro:db";
-import tresPiLogo from "../../assets/brand_logos/trespi.svg";
+import tresPiLogo from "/public/brand_logos/trespi.svg";
 import JobInfoModal from "../work_and_projects/work-info-modal";
 import type { Technology } from "../../types/technology";
 import type { Highlight } from "../../types/highlight";
@@ -76,7 +76,7 @@ const jobsFromDb = await db
 <script>
   // @ts-expect-error - ScrollReveal is defined in the global scope
   ScrollReveal().reveal(".experience", {
-    reset: true,
+    reset: false,
     delay: 150,
   });
 </script>
