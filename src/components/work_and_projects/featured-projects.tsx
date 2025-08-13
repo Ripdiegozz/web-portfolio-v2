@@ -12,23 +12,6 @@ const projects: {
   };
 } = {
   data: {
-    filmpassport: {
-      title: "Film Passport",
-      thumb: thumbFilmPassport,
-      description:
-        "Film Passport is a web application that allows users to browse popular movies, search for movies, and add movies to their favorites list. Each movie has its own dedicated page with a description, trailer, and recommended similar movies.",
-      live: "https://film-passport.netlify.app/",
-      repository: "https://github.com/Ripdiegozz/FilmPassport",
-      tech: "react,nextjs,tailwindcss,js,css,html",
-      why: {
-        title: "Why I built this project?",
-        data: "I developed Film Passport to enhance my skills in web development and to create a platform where users can discover and bookmark their favorite movies. This project allowed me to apply my knowledge of React, Next.js, and Tailwind CSS in a practical setting.",
-      },
-      learned: {
-        title: "What I learned: ",
-        data: "Developing Film Passport improved my abilities in creating responsive user interfaces, managing state in React, and optimizing data flow. I gained experience in implementing search functionality, fetching data from an API, and creating a seamless user experience.",
-      },
-    },
     notewave: {
       title: "Notewave",
       thumb: thumbNotewave,
@@ -61,6 +44,23 @@ const projects: {
       learned: {
         title: "What I learned:",
         data: "Building NatGPT deepened my expertise in AI integration, audio processing, real-time data sync, and scalable app architecture. I gained hands-on experience with authentication, i18n, and delivering a polished UX across devices.",
+      },
+    },
+    filmpassport: {
+      title: "Film Passport",
+      thumb: thumbFilmPassport,
+      description:
+        "Film Passport is a web application that allows users to browse popular movies, search for movies, and add movies to their favorites list. Each movie has its own dedicated page with a description, trailer, and recommended similar movies.",
+      live: "https://film-passport.netlify.app/",
+      repository: "https://github.com/Ripdiegozz/FilmPassport",
+      tech: "react,nextjs,tailwindcss,js,css,html",
+      why: {
+        title: "Why I built this project?",
+        data: "I developed Film Passport to enhance my skills in web development and to create a platform where users can discover and bookmark their favorite movies. This project allowed me to apply my knowledge of React, Next.js, and Tailwind CSS in a practical setting.",
+      },
+      learned: {
+        title: "What I learned: ",
+        data: "Developing Film Passport improved my abilities in creating responsive user interfaces, managing state in React, and optimizing data flow. I gained experience in implementing search functionality, fetching data from an API, and creating a seamless user experience.",
       },
     },
   },
@@ -127,7 +127,10 @@ function FeaturedProjects() {
                       data-tip={tech}
                     >
                       <img
-                        src={customTechLogos[tech] || `https://skillicons.dev/icons?i=${tech}`}
+                        src={
+                          customTechLogos[tech] ||
+                          `https://skillicons.dev/icons?i=${tech}`
+                        }
                         alt={tech}
                         className="h-6 w-6"
                       />
