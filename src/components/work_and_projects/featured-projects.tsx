@@ -51,7 +51,7 @@ const projects: {
       thumb: thumbFilmPassport,
       description:
         "Film Passport is a web application that allows users to browse popular movies, search for movies, and add movies to their favorites list. Each movie has its own dedicated page with a description, trailer, and recommended similar movies.",
-      live: "https://film-passport.netlify.app/",
+      live: "https://whimsical-moonbeam-eea2a7.netlify.app/",
       repository: "https://github.com/Ripdiegozz/FilmPassport",
       tech: "react,nextjs,tailwindcss,js,css,html",
       why: {
