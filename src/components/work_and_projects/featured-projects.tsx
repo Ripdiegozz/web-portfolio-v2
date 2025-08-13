@@ -12,23 +12,6 @@ const projects: {
   };
 } = {
   data: {
-    notewave: {
-      title: "Notewave",
-      thumb: thumbNotewave,
-      description:
-        "Notewave is your go-to digital hub for capturing and sharing ideas effortlessly. Whether you're a creative thinker or meticulous planner, Notewave adapts to your unique style. It's a blend of organization and creativity designed to simplify your digital life, putting your ideas in the spotlight for the world to see.",
-      repository: "https://github.com/Ripdiegozz/Notewave",
-      live: "https://notewave-lake.vercel.app/",
-      tech: "react,nextjs,tailwindcss,ts,js,css,html",
-      why: {
-        title: "Why I built this project?",
-        data: "Notewave was born out of a personal need for a versatile note-taking application. I wanted to create a platform that seamlessly combines organization and creativity. This project aimed to simplify digital note-taking and idea sharing.",
-      },
-      learned: {
-        title: "What I learned: ",
-        data: "Building Notewave honed my skills in creating feature-rich applications. I learned to implement rich text editing, task management features, and responsive design. This project improved my abilities in optimizing user workflows and creating a seamless user experience.",
-      },
-    },
     natgpt: {
       title: "NatGPT",
       thumb: thumbNatGPT,
@@ -44,6 +27,23 @@ const projects: {
       learned: {
         title: "What I learned:",
         data: "Building NatGPT deepened my expertise in AI integration, audio processing, real-time data sync, and scalable app architecture. I gained hands-on experience with authentication, i18n, and delivering a polished UX across devices.",
+      },
+    },
+    notewave: {
+      title: "Notewave",
+      thumb: thumbNotewave,
+      description:
+        "Notewave is your go-to digital hub for capturing and sharing ideas effortlessly. Whether you're a creative thinker or meticulous planner, Notewave adapts to your unique style. It's a blend of organization and creativity designed to simplify your digital life, putting your ideas in the spotlight for the world to see.",
+      repository: "https://github.com/Ripdiegozz/Notewave",
+      live: "https://notewave-lake.vercel.app/",
+      tech: "react,nextjs,tailwindcss,ts,js,css,html",
+      why: {
+        title: "Why I built this project?",
+        data: "Notewave was born out of a personal need for a versatile note-taking application. I wanted to create a platform that seamlessly combines organization and creativity. This project aimed to simplify digital note-taking and idea sharing.",
+      },
+      learned: {
+        title: "What I learned: ",
+        data: "Building Notewave honed my skills in creating feature-rich applications. I learned to implement rich text editing, task management features, and responsive design. This project improved my abilities in optimizing user workflows and creating a seamless user experience.",
       },
     },
     filmpassport: {
