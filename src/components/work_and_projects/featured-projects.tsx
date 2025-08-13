@@ -1,7 +1,10 @@
 import type { Project } from "../../types/project";
 import thumbFilmPassport from "../../assets/projects_thumbs/film-passport/1.webp";
 import thumbNotewave from "../../assets/projects_thumbs/notewave/1.webp";
-import thumbEden from "../../assets/projects_thumbs/Eden/1.png";
+import thumbNatGPT from "../../assets/projects_thumbs/natgpt/1.webp";
+import convexLogo from "../../assets/tech-logos/convex.webp";
+import openaiLogo from "../../assets/tech-logos/open-ai.webp";
+import clerkLogo from "../../assets/tech-logos/clerk.webp";
 
 const projects: {
   data: {
@@ -43,39 +46,49 @@ const projects: {
         data: "Building Notewave honed my skills in creating feature-rich applications. I learned to implement rich text editing, task management features, and responsive design. This project improved my abilities in optimizing user workflows and creating a seamless user experience.",
       },
     },
-    eden: {
-      title: "Eden",
-      thumb: thumbEden,
+    natgpt: {
+      title: "NatGPT",
+      thumb: thumbNatGPT,
       description:
-        "Eden is a community-driven chat application built to bring conversations to life in a vibrant virtual space. Connect with friends, share ideas, and explore a new realm of online communication. Join the EDEN experience today!",
-      repository: "https://github.com/Ripdiegozz/Eden",
-      live: "https://eden-coral.vercel.app/",
-      tech: "react,nextjs,tailwindcss,js,ts,planetscale,mysql,prisma,css,html",
+        "NatGPT is an AI-powered chat platform designed for seamless conversations with both text and voice. Enjoy real-time messaging, voice recording with transcription, and AI-generated responses in a modern, user-friendly interface. Experience the next level of online communication with NatGPT!",
+      repository: "https://github.com/Ripdiegozz/nat-gpt",
+      live: "https://nat-gpt.vercel.app/",
+      tech: "react,nextjs,tailwindcss,typescript,convex,openai,clerk",
       why: {
         title: "Why I built this project?",
-        data: "Eden was conceived with the goal of creating a dynamic and engaging community chat platform. I wanted to provide users with a vibrant virtual space for meaningful conversations and idea sharing. This project aimed to explore advanced technologies for real-time communication.",
+        data: "NatGPT was created to explore advanced AI chat experiences, combining real-time text and voice with multilingual support. The goal was to deliver a fast, accessible, and interactive platform for users to connect and communicate naturally.",
       },
       learned: {
-        title: "What I learned: ",
-        data: "Developing Eden provided me with insights into real-time chat functionality, database management with MySQL and Prisma, and the intricacies of building a community-driven application. I gained experience in optimizing data flow, implementing secure authentication, and fostering user engagement in virtual communities.",
+        title: "What I learned:",
+        data: "Building NatGPT deepened my expertise in AI integration, audio processing, real-time data sync, and scalable app architecture. I gained hands-on experience with authentication, i18n, and delivering a polished UX across devices.",
       },
     },
   },
 };
 
+// Custom tech logos mapping
+const customTechLogos: { [key: string]: string } = {
+  convex: convexLogo.src,
+  openai: openaiLogo.src,
+  clerk: clerkLogo.src,
+};
+
 function FeaturedProjects() {
   return (
-    <div className='px-8 py-6' id="projects">
-      <h2 className='text-2xl font-bold text-center'>
-        Featured <span className='text-[#FFC107]'>Projects</span>
+    <div className="px-8 py-6" id="projects">
+      <h2 className="text-2xl font-bold text-center">
+        Featured <span className="text-[#FFC107]">Projects</span>
       </h2>
       <div>
         {Object.keys(projects.data).map((key, index) => {
           const project = projects.data[key];
           return (
-            <div key={project.repository + index + project.live} className='card bg-white shadow-sm p-4'>
+            <div
+              key={project.repository + index + project.live}
+              className="card bg-white shadow-sm p-4"
+            >
               <h3
-                className='text-2xl font-semibold mt-4 mb-2'
+                className="text-2xl font-semibold mt-4 mb-2"
                 id={project.title.toLowerCase().replace(" ", "-")}
               >
                 {project.title}
@@ -83,45 +96,46 @@ function FeaturedProjects() {
               <img
                 src={project.thumb.src}
                 alt={project.title}
-                className='w-full h-48 sm:h-64 md:h-96 object-contain md:object-cover rounded-md'
+                className="w-full h-48 sm:h-64 md:h-96 object-contain md:object-cover rounded-md"
               />
               <p className="pt-6">{project.description}</p>
-              <div className='flex flex-wrap justify-center md:justify-start gap-4 my-6'>
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 my-6">
                 <a
                   href={project.live}
-                  target='_blank'
-                  rel='noreferrer'
-                  className='btn btn-outline'
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-outline"
                 >
-                  <i className='fa-solid fa-external-link'></i> Live
+                  <i className="fa-solid fa-external-link"></i> Live
                 </a>
                 <a
                   href={project.repository}
-                  target='_blank'
-                  rel='noreferrer'
-                  className='btn btn-ghost'
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-ghost"
                 >
-                  <i className='fa-brands fa-github'></i> Repository
+                  <i className="fa-brands fa-github"></i> Repository
                 </a>
               </div>
-              <div className='w-full mx-auto'>
-                <h3 className='text-lg font-semibold'>Tech Stack:</h3>
-                <div className='flex flex-wrap justify-start gap-2 py-4'>
+              <div className="w-full mx-auto">
+                <h3 className="text-lg font-semibold">Tech Stack:</h3>
+                <div className="flex flex-wrap justify-start gap-2 py-4">
                   {project.tech.split(",").map((tech) => (
                     <div
-                      className='p-0 transition-transform hover:scale-105 tooltip'
+                      key={tech}
+                      className="p-0 transition-transform hover:scale-105 tooltip"
                       data-tip={tech}
                     >
                       <img
-                        src={`https://skillicons.dev/icons?i=${tech}`}
+                        src={customTechLogos[tech] || `https://skillicons.dev/icons?i=${tech}`}
                         alt={tech}
-                        className='h-6 w-6'
+                        className="h-6 w-6"
                       />
                     </div>
                   ))}
                 </div>
               </div>
-              <div className='flex flex-col gap-4'>
+              <div className="flex flex-col gap-4">
                 <p>
                   <strong>{project.why.title}</strong> {project.why.data}
                 </p>
