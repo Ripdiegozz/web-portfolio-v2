@@ -141,7 +141,7 @@ export default function ContactPage() {
             <div>
               <h3 className='text-lg font-semibold'>Social Media:</h3>
               <ul className='flex w-full justify-start items-center gap-6 mt-2 md:gap-10 reveal'>
-                <li className='hover:scale-110 transition-transform hover:text-[#FFC107]'>
+                <li className='hover:scale-110 transition-transform hover:text-warning'>
                   <div
                     className='p-0 transition-transform hover:scale-105 tooltip'
                     data-tip='My Github Profile'
@@ -156,7 +156,7 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </li>
-                <li className='hover:scale-110 transition-transform hover:text-[#FFC107]'>
+                <li className='hover:scale-110 transition-transform hover:text-warning'>
                   <div
                     className='p-0 transition-transform hover:scale-105 tooltip'
                     data-tip='My Linkedin'

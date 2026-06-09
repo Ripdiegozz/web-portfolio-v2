@@ -3,6 +3,7 @@ interface Props {
   title: string;
 }
 
+import { ClientRouter } from "astro:transitions";
 import favicon from "../assets/dagadev_logo.webp";
 const description =
   "I'm Diego, a Software Analyst and Developer based in Colombia. I have a strong background in designing and building web applications, leveraging modern technologies. My expertise extends to implementing scalable backend solutions and creating dynamic, user-friendly interfaces";
@@ -18,6 +19,8 @@ const { title } = Astro.props;
     <link rel='icon' type='image/webp' href={favicon.src} />
     <meta name='generator' content={Astro.generator} />
     <meta name='author' content='Diego Garcia' />
+    <meta name='robots' content='index, follow' />
+    <link rel='canonical' href='https://dagadev.tech' />
     <meta
       name='keywords'
       content='Full Stack Developer, Software Developer, Web Developer, React, Node.js, PostgreSQL, TypeScript, Java'
@@ -60,6 +63,35 @@ const { title } = Astro.props;
       crossorigin='anonymous'
       async></script>
     <script src='https://unpkg.com/scrollreveal' async></script>
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Diego Garcia",
+      jobTitle: "Full Stack Software Engineer",
+      url: "https://dagadev.tech",
+      sameAs: [
+        "https://github.com/Ripdiegozz",
+        "https://www.linkedin.com/in/dagadev/",
+      ],
+      knowsAbout: [
+        "Full Stack Development",
+        "React",
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Web Development",
+        "Cybersecurity",
+        "XDR",
+        "SIEM",
+      ],
+    })} />
+    <ClientRouter />
   </head>
   <body class='container mx-auto'>
     <slot />

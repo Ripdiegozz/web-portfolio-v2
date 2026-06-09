@@ -10,7 +10,7 @@ const jobsFromDb = await getJobExperiences();
 <div id="experience">
   <h2 class='text-2xl font-[600] text-center'>
     Work
-    <span class='text-[#FFC107] text-2xl'>Experience</span>
+    <span class='text-warning text-2xl'>Experience</span>
   </h2>
   <div class='grid grid-cols-1'>
     {
@@ -23,16 +23,18 @@ const jobsFromDb = await getJobExperiences();
                 <img
                   src={`/brand_logos/${job.secondaryImage}`}
                   alt={job.company}
+                  loading='lazy'
                   class='h-16 max-w-44 object-contain md:px-4 py-4 md:py-0'
                 />
               )}
               <img
                 src={`/brand_logos/${job.image}`}
                 alt={job.company}
+                loading='lazy'
                 class='h-16 max-w-44 object-contain'
               />
             </div>
-            <p class='text-gray-600 my-2'>{job.shortDescription}</p>
+            <p class='text-base-content/70 my-2'>{job.shortDescription}</p>
             <div class='max-w-80'>
               <h3 class='py-2'>Tech Stack</h3>
               <ul class='flex flex-row flex-wrap gap-2 items-center justify-start'>

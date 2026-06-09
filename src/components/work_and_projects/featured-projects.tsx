@@ -60,7 +60,7 @@ function FeaturedProjects() {
   return (
     <div className="px-8 py-6" id="projects">
       <h2 className="text-2xl font-bold text-center">
-        Featured <span className="text-[#FFC107]">Projects</span>
+        Featured <span className="text-warning">Projects</span>
       </h2>
       <div>
         {Object.keys(projects.data).map((key, index) => {
@@ -68,7 +68,7 @@ function FeaturedProjects() {
           return (
             <div
               key={project.repository + index + project.live}
-              className="card bg-white shadow-sm p-4"
+              className="card bg-base-100 shadow-sm p-4"
             >
               <h3
                 className="text-2xl font-semibold mt-4 mb-2"
@@ -79,6 +79,7 @@ function FeaturedProjects() {
               <img
                 src={project.thumb.src}
                 alt={project.title}
+                loading="lazy"
                 className="w-full h-48 sm:h-64 md:h-96 object-contain md:object-cover rounded-md"
               />
               <p className="pt-6">{project.description}</p>

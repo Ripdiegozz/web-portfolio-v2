@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Technology } from "../../types/technology";
 import type { Highlight } from "../../types/highlight";
@@ -23,8 +23,25 @@ const JobInfoModal = ({
   techStack = [],
 }: JobInfoModalProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   const toggleModal = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen && closeButtonRef.current) {
+      closeButtonRef.current.focus();
+    }
+  }, [isOpen]);
 
   return (
     <div className='flex flex-col justify-center py-2'>
@@ -42,6 +59,8 @@ const JobInfoModal = ({
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            aria-modal='true'
+            role='dialog'
             className='fixed inset-0 z-50 flex items-center justify-center w-full overflow-x-hidden md:w-[70vw] lg:w-[60vw] md:mx-auto'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -49,7 +68,7 @@ const JobInfoModal = ({
             onClick={toggleModal}
           >
             <motion.div
-              className='bg-white rounded-lg shadow-lg border w-full overflow-x-hidden md:w-[70vw] lg:w-[60vw] md:mx-auto'
+              className='bg-base-100 rounded-lg shadow-lg border w-full overflow-x-hidden md:w-[70vw] lg:w-[60vw] md:mx-auto'
               initial={{
                 width: "50px",
                 height: "50px",
@@ -73,7 +92,7 @@ const JobInfoModal = ({
             >
               <AnimatePresence>
                 <motion.div
-                  className='p-6 md:p-12 h-full w-full overflow-x-hidden md:w-[70vw] lg:w-[60vw] md:mx-auto'
+                  className='p-6 md:p-12 h-full w-full overflow-y-auto overflow-x-hidden md:w-[70vw] lg:w-[60vw] md:mx-auto'
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
@@ -81,12 +100,13 @@ const JobInfoModal = ({
                 >
                   <div className='w-full flex items-start py-2 md:my-0 md:items-center justify-between'>
                     <h2 className='text-2xl font-bold'>
-                      <span className='text-blue-500'>{jobTitle}</span> at{" "}
-                      {jobCompany}
+                      <span className='text-primary'>{jobTitle}</span>{" "}
+                      at {jobCompany}
                     </h2>
                     <button
+                      ref={closeButtonRef}
                       onClick={toggleModal}
-                      className='text-black text-xl'
+                      className='text-base-content text-xl'
                     >
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
@@ -104,12 +124,12 @@ const JobInfoModal = ({
                       </svg>
                     </button>
                   </div>
-                  <p className='text-gray-700 mb-4'>
+                  <p className='text-base-content/80 mb-4'>
                     <span className='font-bold'>Date: </span>
                     {startDate.toLocaleDateString()} -{" "}
                     {endDate ? endDate.toLocaleDateString() : "Present"}
                   </p>
-                  <p className='text-gray-700 my-4 w-full md:w-3/4'>
+                  <p className='text-base-content/80 my-4 w-full md:w-3/4'>
                     {jobDescription}
                   </p>
                   <div className='py-4'>
@@ -133,10 +153,20 @@ const JobInfoModal = ({
                     <ul className='grid grid-cols-1 md:grid-cols-2 list-disc list-inside gap-6'>
                       {highlights.map((highlight, index) => (
                         <li
-                          className='text-gray-700'
+                          className='text-base-content/80'
                           key={`${index}-${highlight.title}`}
                         >
                           {highlight.title}
+                          {highlight.metric && (
+                            <span className='badge badge-primary ml-2'>
+                              {highlight.metric.value}
+                              {highlight.metric.label && (
+                                <span className='badge-ghost ml-1 text-xs'>
+                                  {highlight.metric.label}
+                                </span>
+                              )}
+                            </span>
+                          )}
                         </li>
                       ))}
                     </ul>

@@ -9,10 +9,10 @@ import wazuhLogo from "/public/brand_logos/Wazuh-Logo-1.png";
   <h3 class='text-center text-lg px-4'>
     Companies and organizations I've worked with
   </h3>
-  <div class='wrapper'>
+  <div class='wrapper' aria-hidden='true'>
     <div class='item item1'>
       <img
-        loading='eager'
+        loading='lazy'
         src={tresPiLogo.src}
         alt='TresPi'
         class='w-full h-full object-contain'
@@ -20,7 +20,7 @@ import wazuhLogo from "/public/brand_logos/Wazuh-Logo-1.png";
     </div>
     <div class='item item2'>
       <img
-        loading='eager'
+        loading='lazy'
         src={superGirosLogo.src}
         alt='SuperGiros'
         class='w-full h-full object-contain'
@@ -28,7 +28,7 @@ import wazuhLogo from "/public/brand_logos/Wazuh-Logo-1.png";
     </div>
     <div class='item item3'>
       <img
-        loading='eager'
+        loading='lazy'
         src={stanleyLogo.src}
         alt='Stanley'
         class='w-full h-full object-contain'
@@ -36,7 +36,7 @@ import wazuhLogo from "/public/brand_logos/Wazuh-Logo-1.png";
     </div>
     <div class='item item4'>
       <img
-        loading='eager'
+        loading='lazy'
         src={wazuhLogo.src}
         alt='Wazuh'
         class='w-full h-full object-contain'
@@ -63,7 +63,14 @@ import wazuhLogo from "/public/brand_logos/Wazuh-Logo-1.png";
     position: relative;
     height: 100px;
     overflow: hidden;
-    mask-img: linear-gradient(
+    -webkit-mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
+    );
+    mask-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 1) 20%,
@@ -108,5 +115,15 @@ import wazuhLogo from "/public/brand_logos/Wazuh-Logo-1.png";
   .item4 {
     filter: grayscale(100%);
     animation-delay: calc(18s / 4 * (4 - 4) * -1);
+  }
+
+  .wrapper:hover .item {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item {
+      animation: none;
+    }
   }
 </style>

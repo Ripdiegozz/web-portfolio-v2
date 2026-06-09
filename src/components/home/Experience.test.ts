@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { seedJobExperiences } from "../../lib/seedData";
+import type { Highlight } from "../../types/highlight";
 
 describe("Experience Component Data Layer", () => {
   it("seed data is ordered by startDate descending when sorted", () => {
@@ -50,5 +51,25 @@ describe("Experience Component Data Layer", () => {
     seedJobExperiences.forEach((job) => {
       expect(job.highlights.length).toBeGreaterThan(0);
     });
+  });
+
+  it("short descriptions are concise (1-2 sentences)", () => {
+    seedJobExperiences.forEach((job) => {
+      const sentences = job.shortDescription.split(/[.!?]\s+/).filter(Boolean);
+      expect(sentences.length).toBeLessThanOrEqual(2);
+    });
+  });
+
+  it("highlights may include optional metric data", () => {
+    let metricsFound = 0;
+    seedJobExperiences.forEach((job) => {
+      job.highlights.forEach((highlight: Highlight) => {
+        if (highlight.metric) {
+          expect(highlight.metric.value).toBeDefined();
+          metricsFound++;
+        }
+      });
+    });
+    expect(metricsFound).toBeGreaterThan(0);
   });
 });

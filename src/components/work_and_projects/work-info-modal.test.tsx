@@ -11,7 +11,7 @@ const mockTechStack: Technology[] = [
 
 const mockHighlights: Highlight[] = [
   { title: "Built an awesome feature" },
-  { title: "Improved performance by 50%" },
+  { title: "Improved performance by 50%", metric: { value: "50%", label: "improvement" } },
 ];
 
 const mockProps = {
@@ -82,5 +82,25 @@ describe("JobInfoModal", () => {
     render(<JobInfoModal {...mockProps} />);
     fireEvent.click(screen.getByRole("button", { name: /see more/i }));
     expect(screen.getByText(/Worked on amazing projects at TestCorp./)).toBeInTheDocument();
+  });
+
+  it("renders metric badges when present", () => {
+    render(<JobInfoModal {...mockProps} />);
+    fireEvent.click(screen.getByRole("button", { name: /see more/i }));
+    expect(screen.getByText("50%")).toBeInTheDocument();
+  });
+
+  it("has aria-modal and role dialog on modal wrapper", () => {
+    render(<JobInfoModal {...mockProps} />);
+    fireEvent.click(screen.getByRole("button", { name: /see more/i }));
+    const modal = screen.getByRole("dialog");
+    expect(modal).toHaveAttribute("aria-modal", "true");
+  });
+
+  it("close button is focusable", () => {
+    render(<JobInfoModal {...mockProps} />);
+    fireEvent.click(screen.getByRole("button", { name: /see more/i }));
+    const closeButton = screen.getAllByRole("button")[1];
+    expect(closeButton).toHaveFocus();
   });
 });

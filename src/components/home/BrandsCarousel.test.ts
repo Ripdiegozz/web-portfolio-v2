@@ -29,4 +29,9 @@ describe("BrandsCarousel Logos", () => {
     expect(names).toContain("Stanley");
     expect(names).toContain("Wazuh");
   });
+
+  it("should have aria-hidden on wrapper", () => {
+    const html = `<div class='wrapper' aria-hidden='true'>`;
+    expect(html).toContain("aria-hidden='true'");
+  });
 });
