@@ -158,7 +158,7 @@ function Header() {
           <ThemeToggle />
           <a
             href='/contact'
-            className='text-base-100 bg-primary hover:bg-primary-focus border-neutral no-underline text-[14px] font-[600] badge badge-secondary py-4 w-[82px]'
+            className='text-base-100 bg-neutral-600 hover:bg-neutral-600-focus border-neutral no-underline text-[14px] font-[600] badge badge-secondary py-4 w-[82px]'
           >
             Let's talk
           </a>

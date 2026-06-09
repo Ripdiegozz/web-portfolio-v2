@@ -3,28 +3,15 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import ThemeToggle from "./ThemeToggle";
 
 describe("ThemeToggle", () => {
-  let getItemSpy: ReturnType<typeof vi.spyOn>;
   let setItemSpy: ReturnType<typeof vi.spyOn>;
-  let originalMatchMedia: typeof window.matchMedia;
 
   beforeEach(() => {
     document.documentElement.setAttribute("data-theme", "light");
-    getItemSpy = vi.spyOn(Storage.prototype, "getItem").mockReturnValue(null);
     setItemSpy = vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => {});
-    originalMatchMedia = window.matchMedia;
-    window.matchMedia = vi.fn((query) => ({
-      matches: query === "(prefers-color-scheme: dark)",
-      media: query,
-      onchange: null,
-      addEventListener: vi.fn(),
-      removeEventListener: vi.fn(),
-      dispatchEvent: vi.fn(),
-    })) as unknown as typeof window.matchMedia;
   });
 
   afterEach(() => {
     vi.restoreAllMocks();
-    window.matchMedia = originalMatchMedia;
   });
 
   it("renders a toggle button", () => {
@@ -32,9 +19,10 @@ describe("ThemeToggle", () => {
     expect(screen.getByRole("button", { name: /toggle theme/i })).toBeInTheDocument();
   });
 
-  it("defaults to system preference when no saved theme exists", () => {
+  it("reads initial theme from data-theme attribute", () => {
+    document.documentElement.setAttribute("data-theme", "dark");
     render(<ThemeToggle />);
-    expect(window.matchMedia).toHaveBeenCalledWith("(prefers-color-scheme: dark)");
+    expect(document.documentElement.getAttribute("data-theme")).toBe("dark");
   });
 
   it("toggles data-theme attribute on click", () => {
@@ -53,9 +41,9 @@ describe("ThemeToggle", () => {
     expect(setItemSpy).toHaveBeenCalledWith("theme", expect.any(String));
   });
 
-  it("reads theme from localStorage on mount", () => {
-    getItemSpy.mockReturnValue("dark");
+  it("falls back to light when no data-theme attribute exists", () => {
+    document.documentElement.removeAttribute("data-theme");
     render(<ThemeToggle />);
-    expect(document.documentElement.getAttribute("data-theme")).toBe("dark");
+    expect(document.documentElement.getAttribute("data-theme")).toBe("light");
   });
 });

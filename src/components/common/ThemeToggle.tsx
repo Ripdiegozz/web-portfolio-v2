@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 
 function ThemeToggle() {
   const [theme, setTheme] = useState<string>(() => {
-    if (typeof window === "undefined") return "light";
-    const saved = localStorage.getItem("theme");
-    if (saved) return saved;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    if (typeof document !== "undefined") {
+      const attr = document.documentElement.getAttribute("data-theme");
+      if (attr === "dark" || attr === "light") return attr;
+    }
+    return "light";
   });
 
   useEffect(() => {
