@@ -55,7 +55,7 @@ function EmailButton() {
         <p className='sr-only'>Mail me :)</p>
       </button>
 
-      <dialog id='mail_modal' className='modal text-black'>
+      <dialog id='mail_modal' className='modal text-base-content'>
         <div className='modal-box'>
           <h3 className='text-lg text-center font-bold'>
             My Email Address was copied to your clipboard! 📋
