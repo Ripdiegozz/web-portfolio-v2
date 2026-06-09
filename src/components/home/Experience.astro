@@ -1,13 +1,10 @@
 ---
-import { db, desc, JobExperience } from "astro:db";
+import { getJobExperiences } from "../../lib/getJobExperiences";
 import JobInfoModal from "../work_and_projects/work-info-modal";
 import type { Technology } from "../../types/technology";
 import type { Highlight } from "../../types/highlight";
 
-const jobsFromDb = await db
-  .select()
-  .from(JobExperience)
-  .orderBy(desc(JobExperience.startDate));
+const jobsFromDb = await getJobExperiences();
 ---
 
 <div id="experience">

@@ -15,6 +15,7 @@ export default defineConfig({
       {
         protocol: "https",
         hostname: "skillicons.dev",
+        pathname: "/icons",
       },
     ],
   },
