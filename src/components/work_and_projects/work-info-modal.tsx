@@ -116,7 +116,7 @@ const JobInfoModal = ({
                     <h3 className='py-2'>Tech Stack</h3>
                     <ul className='flex flex-row flex-wrap gap-2 items-center justify-start'>
                       {techStack.map((tech) => (
-                        <li className='mr-2'>
+                        <li key={tech.name} className='mr-2'>
                           <div className='tooltip' data-tip={tech.name}>
                             <img
                               src={`https://skillicons.dev/icons?i=${tech.icon}`}
