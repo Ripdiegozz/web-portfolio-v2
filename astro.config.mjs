@@ -10,4 +10,12 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://dagadev.tech/',
   integrations: [tailwind(), react(), db(), sitemap()],
+  image: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "skillicons.dev",
+      },
+    ],
+  },
 });
