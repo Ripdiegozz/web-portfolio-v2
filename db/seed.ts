@@ -31,7 +31,8 @@ export default async function () {
           title: "Integrated internationalization across frontend and backend for web applications in Italy and the Middle East, enabling support for both Italian and English.",
         },
       ],
-      image: "/stanley.svg",
+      image: "stanley.svg",
+      secondaryImage: "trespi.svg",
       technologies: [
         { name: "Node.js", icon: "nodejs" },
         { name: "Express.js", icon: "express" },
@@ -79,7 +80,7 @@ export default async function () {
           title: "Developed a Java desktop service to manage matrix printers, improving the printing workflow with real-time WebSocket updates.",
         },
       ],
-      image: "/supergiros.webp",
+      image: "supergiros.webp",
       technologies: [
         { name: "Node.js", icon: "nodejs" },
         { name: "Express.js", icon: "express" },

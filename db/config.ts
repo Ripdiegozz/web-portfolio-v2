@@ -15,6 +15,9 @@ const JobExperience = defineTable({
     }),
     shortDescription: column.text(),
     image: column.text(),
+    secondaryImage: column.text({
+      optional: true,
+    }),
     highlights: column.json({
       default: [],
     }),
