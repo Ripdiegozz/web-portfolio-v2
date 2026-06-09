@@ -161,7 +161,7 @@ const JobInfoModal = ({
                             <span className='badge badge-primary ml-2'>
                               {highlight.metric.value}
                               {highlight.metric.label && (
-                                <span className='badge-ghost ml-1 text-xs'>
+                                <span className='ml-1'>
                                   {highlight.metric.label}
                                 </span>
                               )}
