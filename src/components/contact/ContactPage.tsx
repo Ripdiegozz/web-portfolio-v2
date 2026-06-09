@@ -171,21 +171,6 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </li>
-                <li className='hover:scale-110 transition-transform hover:text-[#FFC107]'>
-                  <div
-                    className='p-0 transition-transform hover:scale-105 tooltip'
-                    data-tip='My Twitter'
-                  >
-                    <a
-                      href='https://x.com/rip_diegozz'
-                      target='_blank'
-                      className='text-4xl'
-                      aria-label='My Twitter'
-                    >
-                      <i className='fa-brands fa-x-twitter'></i>
-                    </a>
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
